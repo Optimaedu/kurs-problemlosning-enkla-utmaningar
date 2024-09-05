@@ -4,6 +4,7 @@ import testFunctionResult from "../tests/utils/test-function-result";
 import randomInt from "./utils/random-int";
 
 function f(a: number) {
+  if(a == 0 || a == 1) return 1;
   let n = 0;
   for(let i = 0; i <= a; i++)
     i == 1 ? n = 1 : n *= i;
