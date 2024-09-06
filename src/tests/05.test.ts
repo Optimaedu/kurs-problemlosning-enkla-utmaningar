@@ -41,8 +41,8 @@ describe('05', function() {
   const data = getStudentfileInfo();
 
   test('Fungerar för primtal', () => {
-    for(let i = 0; i < 20; i++) {
-      const b = getPrime();
+    for(let i = 0; i < primes.length; i++) {
+      const b = primes[i];
 
       const code = data.code + '\n\nvar __COURSE_FUNCTION_RETURN_TEST_VAR=isPrime('+b+')';
       const result = runCode(code, '');
@@ -57,8 +57,10 @@ describe('05', function() {
   })
   
   test('Fungerar för icke primtal', () => {
-    for(let i = 0; i < 20; i++) {
-      const b = getNonPrime();
+    for(let i = 0; i < 200; i++) {
+      const b = i;
+      if(primes.indexOf(b) >= 0)
+        continue;
 
       const code = data.code + '\n\nvar __COURSE_FUNCTION_RETURN_TEST_VAR=isPrime('+b+')';
       const result = runCode(code, '');
