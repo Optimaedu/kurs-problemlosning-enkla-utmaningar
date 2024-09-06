@@ -22,4 +22,9 @@ describe('09', function() {
 
   const a = rnd();
   testFunctionResult(data.code, 'findLargestNumber(['+a.join(',')+'])', f(a));
+  const b = rnd();
+  b.pop();
+  b.push(100);
+  b.sort((a,b) => Math.random() < 0.5 ? -1 : 1);
+  testFunctionResult(data.code, 'findLargestNumber(['+b.join(',')+'])', f(b));
 });
